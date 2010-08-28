@@ -1,0 +1,8 @@
+Grails Application Builder is a grails based application that aims to model, build and generate grails applications by reverse engineering existing databases.
+
+The databases that we plan to support progressively are :
+ - MySQL
+ - Oracle
+ - SQL Server
+
+GAB, is a GRAG (http://grag.sourceforge.net/) web equivalent. 
