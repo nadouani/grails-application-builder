@@ -1,6 +1,13 @@
 package fr.nadouani.gab
 
 class Table {
+	static mapping = {
+		table "gab_table"
+		
+		columns cascade:'delete, all-delete-orphan'
+		
+	}
+	
 	String name
 	Project project
 	

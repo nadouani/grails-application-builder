@@ -1,6 +1,11 @@
 package fr.nadouani.gab
 
-class User {	
+class User {
+	static mapping = {
+		table "gab_user"
+		projects cascade:'all-delete-orphan'
+	}
+		
 	String username
 	String password
 	String email

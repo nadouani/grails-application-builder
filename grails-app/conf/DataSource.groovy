@@ -13,8 +13,13 @@ hibernate {
 environments {
     development {
         dataSource {
+			pooled = true
+			url = "jdbc:mysql://localhost/gab"
+			driverClassName = "com.mysql.jdbc.Driver"
+			username = "root"
+			password = ""
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:file:devDB"
+			loggingSql = true
         }
     }
     test {
