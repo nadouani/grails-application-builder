@@ -1,8 +1,7 @@
 package fr.nadouani.gab.db;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.StringWriter;
 
 import javax.sql.DataSource;
 
@@ -53,11 +52,11 @@ public abstract class AbstractDatabaseDDLExtractor {
 				dbPassword);
 		Platform platform = PlatformFactory.createNewPlatformInstance(ds);
 
-		OutputStream baos = new ByteArrayOutputStream();
+		StringWriter sw = new StringWriter();
 		Database db = platform.readModelFromDatabase(dbName);
-		new DatabaseIO().write(db, baos);
+		new DatabaseIO().write(db, sw);
 		
-		baos.flush();
-		return baos.toString();
+		sw.flush();
+		return sw.toString();
 	}
 }

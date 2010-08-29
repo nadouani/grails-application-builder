@@ -5,6 +5,7 @@ class Table {
 	Project project
 	
 	static belongsTo = [project: Project]
+	static hasMany = [columns: Column]
 	
     static constraints = {
     	name (nullable:false, blank:false)

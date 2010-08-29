@@ -7,7 +7,11 @@ class ProjectController {
     def scaffold = Project
 	
 	def ddl = {
-		def ddl = ddlService.getDatabaseDDL (Project.get(params.id)) 
-		[ddl: ddl]
+		def project = Project.get(params.id)
+		def ddl = ddlService.getDatabaseDDL (project) 
+				
+		ddlService.importProjectStructure (project, ddl)
+		
+		[ddl: ddl, project: project]
 	}
 }
