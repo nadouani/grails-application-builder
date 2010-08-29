@@ -7,6 +7,7 @@ class ProjectController {
     def scaffold = Project
 	
 	def ddl = {
-		[ddl: ddlService.getDatabaseDDL (Project.get(params.id)) ]
+		def ddl = ddlService.getDatabaseDDL (Project.get(params.id)) 
+		[ddl: ddl]
 	}
 }

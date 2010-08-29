@@ -15,6 +15,6 @@ class DdlService {
 		AbstractDatabaseDDLExtractor extractor = 
 				DatabaseDDLExtractorFactory.getInstance().getDatabaseExtractor (type)
 				
-		extractor.getDatabaseDDL (project.dbName, project.dbHost, project.dbPort, project.dbUsername, project.dbPassword)
+		return extractor.getDatabaseDDL (project.dbName, project.dbHost, project.dbPort, project.dbUsername, project.dbPassword)
 	}
 }

@@ -16,8 +16,8 @@ grails.project.dependency.resolution = {
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
-        mavenLocal()
-        mavenCentral()
+        // mavenLocal()
+        // mavenCentral()
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -27,9 +27,9 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.5'
-		runtime 'mysql:mysql-connector-java:5.1.10'
-		runtime 'org.apache.ddlutils:ddlutils:1.0'
-		runtime 'commons-dbcp:commons-dbcp:1.2.2'
-		compile 'commons-betwixt:commons-betwixt:0.8'
+		/*runtime 'mysql:mysql-connector-java:5.1.10',
+		 'org.apache.ddlutils:ddlutils:1.0',
+		 'commons-dbcp:commons-dbcp:1.2.2',
+		 'commons-betwixt:commons-betwixt:0.8'*/
     }
 }

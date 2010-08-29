@@ -1,6 +1,7 @@
 package fr.nadouani.gab.db;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.sql.DataSource;
@@ -41,11 +42,12 @@ public abstract class AbstractDatabaseDDLExtractor {
 	 * @throws InstantiationException
 	 * @throws IllegalAccessException
 	 * @throws ClassNotFoundException
+	 * @throws IOException 
 	 */
 	public String getDatabaseDDL(String dbName, String dbHost, String dbPort,
 			String dbUsername, String dbPassword)
 			throws InstantiationException, IllegalAccessException,
-			ClassNotFoundException {
+			ClassNotFoundException, IOException {
 
 		DataSource ds = getDatasource(dbName, dbHost, dbPort, dbUsername,
 				dbPassword);
@@ -53,9 +55,9 @@ public abstract class AbstractDatabaseDDLExtractor {
 
 		OutputStream baos = new ByteArrayOutputStream();
 		Database db = platform.readModelFromDatabase(dbName);
-		new DatabaseIO().write(db, System.out);
-		//new DatabaseIO().write(db, baos);
-
+		new DatabaseIO().write(db, baos);
+		
+		baos.flush();
 		return baos.toString();
 	}
 }
