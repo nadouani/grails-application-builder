@@ -19,4 +19,8 @@ class Column {
     static constraints = {
 		name (nullable:false, blank:false)
     }
+	
+	String toString(){
+		"$name " + (isPrimaryKey ? "(key)" : "")
+	} 
 }
